@@ -4,7 +4,7 @@
     <title>TITLE</title>
 
     <!-- meta information -->
-    <meta name="author" content="Torsten Schrade" />
+    <meta name="author" content="Frederic von Vlahovits" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=1024" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -31,6 +31,9 @@
     <!-- highlight -->
     <link rel="stylesheet" href="vendor/highlight/styles/default.css" />
     <link rel="stylesheet" href="resources/css/hljs.linenumbering.css" />
+
+    <!-- swiper -->
+    <link rel="stylesheet" href="vendor/swiper/swiper.min.css" />
 
     <!-- magnific popup -->
     <link rel="stylesheet" href="vendor/magnific-popup/magnific-popup-1.1.0.css" />
@@ -68,22 +71,22 @@
     <div id="impress">
 
         <div class="step">
-            <h4><strong>Date</strong> | <a href="#">Location</a></h4>
-            <h4><strong>Context</strong></h4>
+            <h4><strong>07.05.2019</strong> | Berlin-Brandenburgische Akademie der Wissenschaften</h4>
+            <h4><strong>TYPO3 Workshop 1</strong></h4>
 
-            <h1 class="down-100">Title</h1>
+            <h1 class="down-100">TYOP3</h1>
 
-            <h2 class="red up-25">Subtitle</h2>
+            <h2 class="red up-25">In der Digitalen Akademie</h2>
 
             <h4 class="down-100">
                 <strong>Slides:</strong>
-                <a href="#" title="View the presentation online">
-                    Link
+                <a href="https://digicademy.github.io/2018_Typo3_eHumanities_1" title="View the presentation online">
+                    https://digicademy.github.io/2018_Typo3_eHumanities_1
                 </a>
             </h4>
 
             <h5>
-                <strong><a href="#">Author(s)</a></strong> |
+                <strong><a href="http://orcid.org/0000-0002-8111-6405">Frederic von Vlahovits, Akademie Mainz</a></strong> |
                 <img src="resources/img/Twitter_bird_logo_2012.svg" alt="Twitter" class="twitter-icon" />
                 <a href="https://twitter.com/digicademy" title="Digital Academy on Twitter">@digicademy</a> |
                 <img src="resources/img/Octicons-mark-github.svg" alt="Twitter" class="gh-icon" />
@@ -93,16 +96,16 @@
         </div>
 
         <div class="step">
-            <h2>Table of Contents</h2>
+            <h2>Inhalt</h2>
             <ol class="line-height-one-five">
                 <li>
-                    One
+                    Das Typo3 CMS
                 </li>
                 <li>
-                    Two
+                    Typo3 in den Digital Humanities
                 </li>
                 <li>
-                    Three
+                    Extbase & Fluid – Ein Überblick
                 </li>
             </ol>
         </div>
@@ -110,392 +113,264 @@
         <div class="step">
             <h1 class="red">01</h1>
             <h2 class="line-height-one-five">
-                Basics
+                Das Typo3 CMS
             </h2>
         </div>
 
         <div class="step">
-            <h1>Heading (H1)</h1>
-            <h2>Heading (H2)</h2>
-            <h3>Heading (H3)</h3>
-            <h4>Heading (H4)</h4>
-            <h5>Heading (H5)</h5>
-            <h6>Heading (H6)</h6>
+            <h2>Was ist <a href="https://typo3.org/">Typo3?</a></h2>
+            <ul>
+                <li>Open Source Content Management System (CMS) der Enterprise-Klasse</li>
+                <li>Erfunden von Kasper Skårhøj 1997</li>
+                <li>Erste öffentliche Version 3.0 2001</li>
+                <li>Kollektive Weiterentwicklung von Typo3 Community</li>
+                <li>Koordination und nachhaltige Entwicklung durch <a href="https://typo3.org/project/association/">TYPO3 Association</a></li>
+                <li>Diverse (nicht-)kommerzielle <a href="https://typo3.com/case-studies/">Use Cases</a></li>
+                <li><strong>Typo3 ist ein Content Management Framework (CMF)</strong></li>
+            </ul>
         </div>
 
         <div class="step">
-            <h2>Text</h2>
-            <h3 class="red up-25 after-25">Standard text styles</h3>
-            <p class="justify">
-               To die or fly to <span class="dotted">dream</span>: ay, <em>that makes calamity of office</em>, and to be: to dread of, and the heart-ache<sup>1</sup>
-               and sweat pith their <span class="outline">currents</span> turns, puzzles <code>the pale cast of outrageous</code> for who would bear, <strong>to be
-               or to sleep</strong> of <del>death</del> <ins>life</ins> what pith and sweat pith <span class="underline">the pangs and arrows</span> of dispriz'd lose ills
-               we have shuffled o'er with a <span class="highlight">bare</span> bourn no <a href="https://en.wikipedia.org/wiki/Mortal_coil">mortal coil</a>. <cite>W.S., Volume<sub>2</sub></cite>
-            </p>
-            <blockquote>
-                Beware the Jabberwock, my son!
-                The jaws that bite, the claws that catch!
-                Beware the Jubjub bird, and shun
-                The frumious Bandersnatch!
-            </blockquote>
-        </div>
-
-        <div class="step">
-            <h2>Text</h2>
-            <h3 class="red up-25 after-25">Text classes (medium, small, x-small)</h3>
-            <h4><strong>medium</strong></h4>
-            <p class="medium up-25">
-               To die or fly to <span class="dotted">dream</span>: ay, <em>that makes calamity of office</em>, and to be: to dread of, and the heart-ache<sup>1</sup>
-               and sweat pith their <span class="outline">currents</span> turns, puzzles <code>the pale cast of outrageous</code> for who would bear, <strong>to be
-               or to sleep</strong> of <del>death</del> <ins>life</ins> what pith and sweat pith <span class="underline">the pangs and arrows</span> of dispriz'd lose ills
-               we have shuffled o'er with a <span class="highlight">bare</span> bourn no <a href="https://en.wikipedia.org/wiki/Mortal_coil">mortal coil</a>. <cite>W.S., Volume<sub>2</sub></cite>
-            </p>
-            <h5><strong>small</strong></h5>
-            <p class="small up-25">
-               To die or fly to <span class="dotted">dream</span>: ay, <em>that makes calamity of office</em>, and to be: to dread of, and the heart-ache<sup>1</sup>
-               and sweat pith their <span class="outline">currents</span> turns, puzzles <code>the pale cast of outrageous</code> for who would bear, <strong>to be
-               or to sleep</strong> of <del>death</del> <ins>life</ins> what pith and sweat pith <span class="underline">the pangs and arrows</span> of dispriz'd lose ills
-               we have shuffled o'er with a <span class="highlight">bare</span> bourn no <a href="https://en.wikipedia.org/wiki/Mortal_coil">mortal coil</a>. <cite>W.S., Volume<sub>2</sub></cite>
-            </p>
-            <h6><strong>x-small</strong></h6>
-            <p class="x-small up-25">
-               To die or fly to <span class="dotted">dream</span>: ay, <em>that makes calamity of office</em>, and to be: to dread of, and the heart-ache<sup>1</sup>
-               and sweat pith their <span class="outline">currents</span> turns, puzzles <code>the pale cast of outrageous</code> for who would bear, <strong>to be
-               or to sleep</strong> of <del>death</del> <ins>life</ins> what pith and sweat pith <span class="underline">the pangs and arrows</span> of dispriz'd lose ills
-               we have shuffled o'er with a <span class="highlight">bare</span> bourn no <a href="https://en.wikipedia.org/wiki/Mortal_coil">mortal coil</a>. <cite>W.S., Volume<sub>2</sub></cite>
-            </p>
-        </div>
-
-        <div class="step">
-            <h2>Lists, Lists, Lists</h2>
-            <h3 class="red up-25 after-25">Definition, unordered, ordered</h3>
-            <div class="row">
-                <div class="four columns">
-                    <dl>
-                        <dt>
-                            Acceleration
-                        </dt>
-                        <dd>
-                            A constant force, acting on a particle of mass m, will produce a constant acceleration a
-                        </dd>
-                        <dt>
-                            Energy
-                        </dt>
-                        <dd>
-                            If we represent kinetic energy by the symbol K, then K = ½ m v²
-                        </dd>
-                    </dl>
-                </div>
-                <div class="four columns">
-                    <h3>Medium</h3>
+            <h2>Warum ein CMS/CMF?</h2>
+            <ul>
+                <li>CMS
                     <ul>
-                        <li>One</li>
-                        <li>Two
-                            <ul>
-                                <li>Two.One</li>
-                                <li>Two.Two</li>
-                            </ul>
-                        </li>
-                        <li>Three</li>
+                        <li>Trennung von Daten, Struktur, Design</li>
+                        <li>Einfache Pflege redaktioneller Inhalte</li>
+                        <li>Saubere Organisation von Inhalten</li>
+                        <li>Reduzierung von Fehleranfälligkeit der Struktur</li>
                     </ul>
-                    <h4>Small</h4>
-                    <ul class="small">
-                        <li>One</li>
-                        <li>Two
-                            <ul>
-                                <li>Two.One</li>
-                                <li>Two.Two</li>
-                            </ul>
-                        </li>
-                        <li>Three</li>
+                </li>
+                <li>
+                    CMF
+                    <ul>
+                        <li>Macht Stabile CMS-Struktur flexibel</li>
+                        <li>Quasi uneingeschränkte Erweiterbarkeit</li>
+                        <li>Einheitliche Entwickliungsstandards erhöhen Nachhaltigkeit</li>
+                        <li>Framework-Architektur erhöht Schnelligkeit</li>
+                        <li>Geringere Fehleranfälligkeit im Team-Workflow</li>
                     </ul>
-                </div>
-                <div class="four columns">
-                    <h3>Medium</h3>
-                    <ol>
-                        <li>One</li>
-                        <li>Two
-                            <ol>
-                                <li>Two.One</li>
-                                <li>Two.Two</li>
-                            </ol>
-                        </li>
-                        <li>Thre</li>
-                    </ol>
-                    <h4>Small</h4>
-                    <ol class="small">
-                        <li>One</li>
-                        <li>Two
-                            <ol>
-                                <li>Two.One</li>
-                                <li>Two.Two</li>
-                            </ol>
-                        </li>
-                        <li>Thre</li>
-                    </ol>
-                </div>
-            </div>
+                </li>
+            </ul>
+            </ul>
         </div>
 
         <div class="step">
-            <h2>Tables</h2>
-            <h3 class="red up-25 after-50">Table styles</h3>
-            <table>
-                <thead>
-                    <tr>
-                        <th>One</th>
-                        <th>Two</th>
-                        <th>Three</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Four</td>
-                        <td>Five</td>
-                        <td>Six</td>
-                    </tr>
-                    <tr>
-                        <td>Seven</td>
-                        <td>Eight</td>
-                        <td>Nine</td>
-                    </tr>
-                </tbody>
-            </table>
+            <h2>Warum Typo3?</h2>
+        </div>
+
+        <div class="step">
+            <h2>Arbeiten mit Typo3</h2>
+        </div>
+
+        <div class="step">
+            <h2>Das Typo3 Backend</h2>
+        </div>
+
+        <div class="step">
+            <h2>Typo3-Extensions</h2>
+        </div>
+
+        <div class="step">
+            <h2>Hands-on: Einbindung der News Extension</h2>
+            <ol>
+                <li class="substep">Template "Main TypoScript Rendering" auf Seite "Home" bearbeiten
+                    <code class="linenumbers">page = PAGE
+page.typeNum = 0
+page.10 = CONTENT
+page.10.table = tt_content</code>
+                </li>
+                <li class="substep">"Hallo Welt"</li>
+                <li class="substep">News Extension aus dem TER installieren</li>
+                <li class="substep">News Typoscript einbinden</li>
+                <li class="substep">News Datensatz erstellen</li>
+                <li class="substep">News Plugin setzen</li>
+                <li class="substep">Fertig!</li>
+            </ol>
         </div>
 
         <div class="step">
             <h1 class="red">02</h1>
             <h2 class="line-height-one-five">
-                Advanced
+                Typo3 in den Digital Humanities
             </h2>
         </div>
 
         <div class="step">
-            <h2>Slide structure</h2>
-            <h3 class="red up-25 after-50">Twelfe column grid with skeleton.css</h3>
-            <div class="example-grid">
-                <div class="row">
-                    <div class="one column">One</div>
-                    <div class="eleven columns">Eleven</div>
+            <h2>TYPO3 Projekte</h2>
+            <h4 class="red up-25">Beispiele in Auswahl</h4>
+            <!-- Swiper -->
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide" data-hash="/step-7/substep-1">
+                        <div class="six columns first">
+                            <a href="http://www.regesta-imperii.de/regesten" title="Regestenapplikation der Regesta Imperii">
+                                <img class="pull-up" src="resources/img/onlineapp-ri.png" width="100%" />
+                            </a>
+                            <p class="centered pull-up">
+                                Website: <a href="http://www.regesta-imperii.de/regesten">http://www.regesta-imperii.de/regesten</a>
+                            </p>
+                        </div>
+                        <div class="six columns last">
+                            <h5><strong>Regesta Imperii Online</strong></h5>
+                            <ul class="even-left medium">
+                                <li>
+                                    Datenbank mit 176.000 Urkundenregesten im Volltext
+                                </li>
+                                <li>
+                                    Literaturdatenbank mit 1.7 Mio Titeln zum europäischen Mittelalter
+                                </li>
+                                <li>
+                                    Komplexe boolsche Suchlogik mit Schreibweisentoleranz
+                                </li>
+                                <li>
+                                    Alle Regesten in CEI via systemneutraler REST-Schnittstelle (Lizenz CC-BY)
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="swiper-slide" data-hash="/step-7/substep-2">
+                        <div class="six columns first">
+                            <a href="http://www.corpusvitrearum.de" title="Digitales Bildarchiv des Corpus Vitrearum">
+                                <img class="pull-up" src="resources/img/onlineapp-cvma.png" width="100%" />
+                            </a>
+                            <p class="centered pull-up">
+                                Website: <a href="http://www.corpusvitrearum.de">http://www.corpusvitrearum.de</a>
+                            </p>
+                        </div>
+                        <div class="six columns last">
+                            <h5><strong>Corpus Vitrearum Digital</strong></h5>
+                            <ul class="even-left medium">
+                                <li>
+                                    Hochauflösende TIFF-Bilder zum freien Download (CC-BY)
+                                </li>
+                                <li>
+                                    Metadaten eingebettet als XMP (ISO-Standard)
+                                </li>
+                                <li>
+                                    Inhaltliche Erschließung mit kontrollierem Vokabular (ICONCLASS)
+                                </li>
+                                <li>
+                                    REST-Schnittstellen für Metadaten in XMP und JSON-LD (Semantic Web)
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="swiper-slide" data-hash="/step-7/substep-3">
+                        <div class="six columns first">
+                            <a href="http://www.inschriften.net" title="Deutsche Inschriften Online">
+                                <img class="pull-up" src="resources/img/onlineapp-di.png" width="100%" />
+                            </a>
+                            <p class="centered pull-up">
+                                Website: <a href="http://www.inschriften.net/">http://www.inschriften.net</a>
+                            </p>
+                        </div>
+                        <div class="six columns last">
+                            <h5><strong>Deutsche Inschriften Online</strong></h5>
+                            <ul class="even-left medium">
+                                <li>
+                                    42 Inschriftenbände bzw. -bestände mit ca. 17.000 Katalognummern und 18.000
+                                    Abbildungen
+                                </li>
+                                <li>
+                                    Flexible XML Workflows zur Überführung der Banddaten in die Applikation
+                                </li>
+                                <li>
+                                    Persistente Referenzierung aller Artikel mittels URN der Deutschen Nationalbibliothek
+                                </li>
+                                <li>
+                                    Standardkonforme Ausgabe der Kataloartikel als TEI/EpiDoc via REST-Interface
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="swiper-slide" data-hash="/step-7/substep-4">
+                        <div class="six columns first">
+                            <a href="http://www.controversia-et-confessio.de" title="Quellendatenbank zur Bekenntnisbildung und Konfessionalisierung">
+                                <img class="pull-up" src="resources/img/onlineapp-cc.png" width="100%" />
+                            </a>
+                            <p class="centered pull-up">
+                                Website: <a href="http://www.controversia-et-confessio.de">http://www.controversia-et-confessio.de</a>
+                            </p>
+                        </div>
+                        <div class="six columns last">
+                            <h5><strong>Controversia &amp; Confessio Digital</strong></h5>
+                            <ul class="even-left medium">
+                                <li>
+                                    Quellen- und Personendatenbank mit komplexen Beziehungen (Autoren, Gegner, Drucker, etc.)
+                                </li>
+                                <li>
+                                    Umfängliche Suchmöglichkeiten (rollenbasiert, chronologisch, geographisch)
+                                </li>
+                                <li>
+                                    Aufbereitung der Daten für die historische Netzwerkanalyse
+                                </li>
+                                <li>
+                                    Webfrontend vollständig nach Responsive Web / Mobile First ansatz
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="swiper-slide" data-hash="/step-7/substep-5">
+                        <div class="six columns first">
+                            <a href="http://www.gluck-gesamtausgabe.de" title="Digitales Gluck Werkverzeichnis">
+                                <img class="pull-up" src="resources/img/onlineapp-gluck.png" width="100%" />
+                            </a>
+                            <p class="centered pull-up">
+                                Website: <a href="http://www.gluck-gesamtausgabe.de/">http://www.gluck-gesamtausgabe.de</a>
+                            </p>
+                        </div>
+                        <div class="six columns last">
+                            <h5><strong>Digitales Gluck Werkverzeichnis</strong></h5>
+                            <ul class="even-left medium">
+                                <li>
+                                    Bisher 70 ausführliche Werkbeschreibungen, 2000 Quellen aus 432 Archiven, über 1000 nachgewiesene
+                                    Personen (Sänger, Tänzer, Widmungsempfänger), 370 kartierte Spielorte
+                                </li>
+                                <li>
+                                    Komplexe Suchfunktionalitäten für Werke und Quellen, Register für Spielorte, Archivorte und Personen
+                                </li>
+                                <li>
+                                    SVG-basierte Notenanzeige (via Verovio) aus Plaine & Easie Kodierungen
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="swiper-slide" data-hash="/step-7/substep-6">
+                        <div class="six columns first">
+                            <a href="http://www.namenforschung.net" title="Digitales Familiennamenwörterbuch Deutschlands">
+                                <img class="pull-up" src="resources/img/onlineapp-dfd.png" width="100%" />
+                            </a>
+                            <p class="centered pull-up">
+                                Website: <a href="http://www.namenforschung.net/">http://www.namenforschung.net</a>
+                            </p>
+                        </div>
+                        <div class="six columns last">
+                            <h5><strong>Digitales Familiennamenwörterbuch</strong></h5>
+                            <ul class="even-left medium">
+                                <li>
+                                    Digitale Editionsumgebung, basierend auf nativer XML-Datenbank,
+                                    Erfassung der Namenartikel in TEI
+                                </li>
+                                <li>
+                                    Kartenapplikation zur Kartierung der Familiennamen auf Basis
+                                    der Telefonanschlüsse (Stand 2005)
+                                </li>
+                                <li>
+                                    REST-basierte Applikationsarchitektur mit TYPO3 Frontend zur Anzeige
+                                    und Recherche der Namenartikel
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-                <div class="row">
-                    <div class="two columns">Two</div>
-                    <div class="ten columns">Ten</div>
-                </div>
-                <div class="row">
-                    <div class="three columns">Three</div>
-                    <div class="nine columns">Nine</div>
-                </div>
-                <div class="row">
-                    <div class="four columns">Four</div>
-                    <div class="eight columns">Eight</div>
-                </div>
-                <div class="row">
-                    <div class="five columns">Five</div>
-                    <div class="seven columns">Seven</div>
-                </div>
-                <div class="row">
-                    <div class="six columns">Six</div>
-                    <div class="six columns">Six</div>
-                </div>
-                <div class="row">
-                    <div class="seven columns">Seven</div>
-                    <div class="five columns">Five</div>
-                </div>
-                <div class="row">
-                    <div class="eight columns">Eight</div>
-                    <div class="four  columns">Four</div>
-                </div>
-                <div class="row">
-                    <div class="nine columns">Nine</div>
-                    <div class="three columns">Three</div>
-                </div>
-                <div class="row">
-                    <div class="ten columns">Ten</div>
-                    <div class="two columns">Two</div>
-                </div>
-                <div class="row">
-                    <div class="eleven columns">Eleven</div>
-                    <div class="one column">One</div>
-                </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+                <!-- Add Arrows -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
             </div>
-            <p class="down-25">
-                Website: <a href="http://getskeleton.com/">http://getskeleton.com/</a>
-            </p>
-        </div>
-
-        <div class="step">
-            <h2>Substeps</h2>
-            <h3 class="red up-25 after-50">Triggered with class "substep"</h3>
-            <ul class="line-height-one-five">
-                <li class="substep">One</li>
-                <li class="substep">Two</li>
-                <li class="substep">Three</li>
-                <li class="substep">Four</li>
-                <li class="substep">Five</li>
-            </ul>
-        </div>
-
-        <div class="step">
-            <h2>Responsive images</h2>
-            <h3 class="red up-25 after-50">With magnific popup</h3>
-            <div class="mfp-lightbox row">
-                <div class="three columns">
-                    <a href="resources/img/1024x768.png">
-                        <img src="resources/img/1024x768.png" />
-                    </a>
-                </div>
-                <div class="four columns">
-                    <a href="resources/img/1024x768.png">
-                        <img src="resources/img/1024x768.png" />
-                    </a>
-                </div>
-                <div class="five columns">
-                    <a href="resources/img/1024x768.png">
-                        <img src="resources/img/1024x768.png" />
-                    </a>
-                </div>
-            </div>
-            <p class="down-50">
-                Website: <a href="http://dimsemenov.com/plugins/magnific-popup/">http://dimsemenov.com/plugins/magnific-popup/</a>
-            </p>
-        </div>
-
-        <div class="step">
-            <h2>Code listings</h2>
-            <h3 class="red up-25 after-50">With highlight.js (support for most languages)</h3>
-<pre>
-<code class="linenumbers js">function $initHighlight(block, cls) {
-  try {
-    if (cls.search(/\bno\-highlight\b/) != -1)
-      return process(block, true, 0x0F) +
-             ` class="${cls}"`;
-  } catch (e) {
-    /* handle exception */
-  }
-  for (var i = 0 / 2; i < classes.length; i++) {
-    if (checkCondition(classes[i]) === undefined)
-      console.log('undefined');
-  }
-}
-
-export  $initHighlight;
-</code>
-</pre>
-        <p>
-             Website:  <a href="https://highlightjs.org/">https://highlightjs.org/</a>
-        </p>
-        </div>
-
-        <div class="step">
-            <h2>Alternative code listing</h2>
-            <h3 class="red up-25 after-25">With Codemirror (support for even more languages)</h3>
-<form><textarea id="sparql" name="sparql">
-PREFIX rel: &lt;http://purl.org/vocab/relationship/&gt;
-PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
-PREFIX foaf: &lt;http://xmlns.com/foaf/0.1/&gt;
-PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
-
-SELECT DISTINCT ?subject ?subjectLabel ?object ?objectLabel ?predicate
-WHERE {
-    ?subject ?predicate ?object .
-    ?subject (rel:parentOf|^rel:parentOf|rel:spouseOf) ?object .
-    ?subject rdfs:label ?subjectLabel .
-    ?object rdfs:label ?objectLabel .
-    ?subject foaf:gender ?subjectGender .
-    ?object foaf:gender ?objectGender .
-    BIND (IF(?subjectGender = "male"@en, "gold", "yellowgreen") AS ?sourceColor)
-    BIND (IF(?objectGender = "male"@en, "gold", "yellowgreen") AS ?targetColor)
-}
-</textarea></form>
-        <p>
-             Website:  <a href="https://codemirror.net/">https://codemirror.net/</a>
-        </p>
-        </div>
-
-        <div class="step">
-            <h2>Charts</h2>
-            <h3 class="red up-25 after-50">With chartist.js</h3>
-            <div class="ct-container">
-                <div class="ct-chart ct-major-twelfth project-count"></div>
-            </div>
-            <p class="down-25">
-                 Website: <a href="https://gionkunz.github.io/chartist-js/">https://gionkunz.github.io/chartist-js/</a>
-            </p>
-        </div>
-
-        <div class="step">
-            <h2>Graph models</h2>
-            <h3 class="red up-25 after-25">With greuler.js</h3>
-            <div id="greuler"></div>
-            <script>
-                'use strict';
-                greuler({
-                  target: '#greuler',
-                  width: 480,
-                  height: 300,
-                  data: greuler.Graph.random({
-                    order: 5,
-                    size: 5,
-                    connected: true
-                  })
-                }).update()
-            </script>
-            <p class="down-75">
-                 Website: <a href="https://maurizzzio.github.io/greuler/#/">https://maurizzzio.github.io/greuler/#/</a>
-            </p>
-        </div>
-
-        <div class="step">
-            <div class="centered">
-                <h1>F I N I S</h1>
-                <h2>Thank you</h2>
-            </div>
-        </div>
-
-        <div class="step">
-
-            <h2>Literature &amp; Software</h2>
-
-            <h4>Literature</h4>
-
-            <ul class="small">
-                <li>
-                    One
-                </li>
-                <li>
-                    Two
-                </li>
-                <li>
-                    Three
-                </li>
-            </ul>
-
-            <h4>Software</h4>
-
-            <ul class="small">
-                <li>
-                    One
-                </li>
-                <li>
-                   Two
-                </li>
-                <li>
-                    Three
-                </li>
-            </ul>
-
-            <h4>Download</h4>
-            <ul class="small">
-                <li>
-                    <a href="#">
-                        Link to presentation
-                    </a>
-                </li>
-                <li>
-                    License: <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a>, Author
-                </li>
-            </ul>
+            <p class="x-small right">Quelle: <a href="https://digicademy.github.io/2017_typo3_digital_humanities/#/step-11">Torsten Schrade</a></p>
         </div>
 
     </div>
@@ -517,13 +392,24 @@ WHERE {
             matchBrackets: true,
             lineNumbers: true,
             viewportMargin: Infinity
-        });
-    </script>
+        });</script>
 
     <!-- highlight -->
     <script src="vendor/highlight/highlight.pack-9.3.0.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
     <script src="resources/js/hljs.linenumbering.js"></script>
+
+    <!-- swiper -->
+    <script src="vendor/swiper/swiper.min.js"></script>
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            pagination: '.swiper-pagination',
+            paginationClickable: true,
+            nextButton: '.swiper-button-next',
+            prevButton: '.swiper-button-prev',
+            spaceBetween: 30,
+            hashnav: true
+        });</script>
 
     <!-- magnific popup -->
     <script src="vendor/magnific-popup/jquery.magnific-popup.min-1.1.0.js"></script>
