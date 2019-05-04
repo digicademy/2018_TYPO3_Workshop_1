@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>TITLE</title>
+    <title>TYPO3 Workshop 1</title>
 
     <!-- meta information -->
     <meta name="author" content="Frederic von Vlahovits" />
@@ -24,6 +24,9 @@
 
     <!-- chartist -->
     <link rel="stylesheet" href="vendor/chartist/chartist.min-0.9.7.css" />
+
+    <!-- unite gallery -->
+    <link rel="stylesheet" href="vendor/unitegallery/css/unite-gallery.css" type="text/css" />
 
     <!-- codemirror -->
     <link rel="stylesheet" href="vendor/codemirror/lib/codemirror.css" />
@@ -157,28 +160,130 @@
 
         <div class="step">
             <h2>Warum Typo3?</h2>
+            <ul>
+                <li>
+                    Out-of-the-box features
+                </li>
+                    <ul>
+                        <li>Sicherheit</li>
+                        <li>Stabilität</li>
+                        <li>Long-term support</li>
+                        <li>Redaktionsbackend</li>
+                        <li>Multiple Accounts</li>
+                        <li>Mehrsprachigkeit</li>
+                        <li>…</li>
+                    </ul>
+                <li>
+                    Flexibilität
+                </li>
+                    <ul>
+                        <li>Individuelle Frontends</li>
+                        <li>PHP Core</li>
+                        <li>Diverse Datenbankanbindungen</li>
+                        <li>Upgradezyklus</li>
+                        <li>…</li>
+                    </ul>
+            </ul>
         </div>
 
         <div class="step">
             <h2>Arbeiten mit Typo3</h2>
+            <ul>
+                <li>Rollen
+                    <ul>
+                        <li>Editor</li>
+                        <li>Integrator</li>
+                        <li>Developer</li>
+                    </ul>
+                </li>
+                <li>Backend und Frontend
+                    <dl>
+                        <dt>Frontend</dt>
+                        <dd class="row">
+                            <div class="nine columns">
+                                    Die von Typo3 produzierte Website, z.B. <a href="http://agate.academy">http://agate.academy</a>
+                            </div>
+                            <div class="mfp-lightbox three columns">
+                                <a href="resources/img/agate_frontend.png">
+                                    <img src="resources/img/agate_frontend.png" alt="AGATE Frontend" title="AGATE Frontend">
+                                </a>
+                            </div>
+                        </dd>
+                        <dt>Backend</dt>
+                        <dd class="row">                            
+                            <div class="nine columns">
+                                Der Administrationsbereich, z.B. <a href="http://agate.academy/typo3">http://agate.academy/typo3</a>
+                            </div>
+                            <div class="mfp-lightbox three columns">
+                                <a href="resources/img/agate_backend.png">
+                                    <img src="resources/img/agate_backend.png" alt="AGATE Backend" title="AGATE Backend">
+                                </a>
+                            </div>
+                        </dd>
+                    </dl>
+                </li>
+            </ul>
         </div>
 
         <div class="step">
             <h2>Das Typo3 Backend</h2>
+            <h3 class="red up-25 after-50">Grundsätzliche Struktur</h3>
+            <div class="mfp-lightbox">
+                <a href="resources/img/BackendAreasOverview.png">
+                    <img src="resources/img/BackendAreasOverview.png" alt="Typo3 Backend" title="Typo3 Backend">
+                </a>
+            </div>
+            <p class="x-small right">Quelle: <a href="https://docs.typo3.org/typo3cms/GettingStartedTutorial/8.7/GeneralPrinciples/GeneralBackendStructure/Index.html">Typo3 Documentation</a></p>
         </div>
 
         <div class="step">
-            <h2>Typo3-Extensions</h2>
+                <h2>Das Typo3 Backend</h2>
+                <h3 class="red up-25 after-50">Seitenbaum und Module</h3>
+                <div class="row">
+                    <div class="six columns">
+                        <h4>Page Module</h4>
+                        <p class="x-small">Zeigt eine strukturierte Ansicht, der einer Seite zugeordeten Content Elemente und Plugins. Die Struktur wird in sog. Backend Layouts festgelegt.</p>
+                        <div class="mfp-lightbox">
+                            <a href="resources/img/PageModule.png">
+                                <img src="resources/img/PageModule.png" alt="Typo3 Page Module" title="Typo3 Page Module">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="six columns">
+                        <h4>List Module</h4>
+                        <p class="x-small">Zeigt alle Datensätze, die dieser Seite zugeordnet sind (Seiten, Content Elemente, Spezifische Datensätze wie z.B. News, Plugins etc.).</p>
+                        <div class="mfp-lightbox">
+                            <a href="resources/img/ListModule.png">
+                                <img src="resources/img/ListModule.png" alt="Typo3 List Module" title="Typo3 List Module">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        <div class="step">
+            <h2>Extensions</h2>
+        </div>
+
+        <div class="step">
+            <h2>Templating in Typo3</h2>
+            <h3 class="red up-25 after-50">Grundsätze</h3>
+        </div>
+
+        <div class="step">
+            <h2>Templating in Typo3</h2>
+            <h3 class="red up-25 after-50">TypoScript</h3>
         </div>
 
         <div class="step">
             <h2>Hands-on: Einbindung der News Extension</h2>
             <ol>
                 <li class="substep">Template "Main TypoScript Rendering" auf Seite "Home" bearbeiten
-                    <code class="linenumbers">page = PAGE
+                        <pre><code class="linenumbers">cpage = PAGE
 page.typeNum = 0
 page.10 = CONTENT
-page.10.table = tt_content</code>
+page.10.table = tt_content
+</code></pre>
                 </li>
                 <li class="substep">"Hallo Welt"</li>
                 <li class="substep">News Extension aus dem TER installieren</li>
@@ -190,10 +295,6 @@ page.10.table = tt_content</code>
         </div>
 
         <div class="step">
-            <h2>Typo3-Extensions konfigurieren mit Fluid</h2>
-        </div>
-
-        <div class="step">
             <h1 class="red">02</h1>
             <h2 class="line-height-one-five">
                 Typo3 in den Digital Humanities
@@ -201,186 +302,226 @@ page.10.table = tt_content</code>
         </div>
 
         <div class="step">
-            <h2>TYPO3 Projekte</h2>
-            <h4 class="red up-25">Beispiele in Auswahl</h4>
-            <!-- Swiper -->
-            <div class="swiper-container">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide" data-hash="/step-7/substep-1">
-                        <div class="six columns first">
-                            <a href="http://www.regesta-imperii.de/regesten" title="Regestenapplikation der Regesta Imperii">
-                                <img class="pull-up" src="resources/img/onlineapp-ri.png" width="100%" />
-                            </a>
-                            <p class="centered pull-up">
-                                Website: <a href="http://www.regesta-imperii.de/regesten">http://www.regesta-imperii.de/regesten</a>
-                            </p>
-                        </div>
-                        <div class="six columns last">
-                            <h5><strong>Regesta Imperii Online</strong></h5>
-                            <ul class="even-left medium">
-                                <li>
-                                    Datenbank mit 176.000 Urkundenregesten im Volltext
-                                </li>
-                                <li>
-                                    Literaturdatenbank mit 1.7 Mio Titeln zum europäischen Mittelalter
-                                </li>
-                                <li>
-                                    Komplexe boolsche Suchlogik mit Schreibweisentoleranz
-                                </li>
-                                <li>
-                                    Alle Regesten in CEI via systemneutraler REST-Schnittstelle (Lizenz CC-BY)
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="swiper-slide" data-hash="/step-7/substep-2">
-                        <div class="six columns first">
-                            <a href="http://www.corpusvitrearum.de" title="Digitales Bildarchiv des Corpus Vitrearum">
-                                <img class="pull-up" src="resources/img/onlineapp-cvma.png" width="100%" />
-                            </a>
-                            <p class="centered pull-up">
-                                Website: <a href="http://www.corpusvitrearum.de">http://www.corpusvitrearum.de</a>
-                            </p>
-                        </div>
-                        <div class="six columns last">
-                            <h5><strong>Corpus Vitrearum Digital</strong></h5>
-                            <ul class="even-left medium">
-                                <li>
-                                    Hochauflösende TIFF-Bilder zum freien Download (CC-BY)
-                                </li>
-                                <li>
-                                    Metadaten eingebettet als XMP (ISO-Standard)
-                                </li>
-                                <li>
-                                    Inhaltliche Erschließung mit kontrollierem Vokabular (ICONCLASS)
-                                </li>
-                                <li>
-                                    REST-Schnittstellen für Metadaten in XMP und JSON-LD (Semantic Web)
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="swiper-slide" data-hash="/step-7/substep-3">
-                        <div class="six columns first">
-                            <a href="http://www.inschriften.net" title="Deutsche Inschriften Online">
-                                <img class="pull-up" src="resources/img/onlineapp-di.png" width="100%" />
-                            </a>
-                            <p class="centered pull-up">
-                                Website: <a href="http://www.inschriften.net/">http://www.inschriften.net</a>
-                            </p>
-                        </div>
-                        <div class="six columns last">
-                            <h5><strong>Deutsche Inschriften Online</strong></h5>
-                            <ul class="even-left medium">
-                                <li>
-                                    42 Inschriftenbände bzw. -bestände mit ca. 17.000 Katalognummern und 18.000
-                                    Abbildungen
-                                </li>
-                                <li>
-                                    Flexible XML Workflows zur Überführung der Banddaten in die Applikation
-                                </li>
-                                <li>
-                                    Persistente Referenzierung aller Artikel mittels URN der Deutschen Nationalbibliothek
-                                </li>
-                                <li>
-                                    Standardkonforme Ausgabe der Kataloartikel als TEI/EpiDoc via REST-Interface
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="swiper-slide" data-hash="/step-7/substep-4">
-                        <div class="six columns first">
-                            <a href="http://www.controversia-et-confessio.de" title="Quellendatenbank zur Bekenntnisbildung und Konfessionalisierung">
-                                <img class="pull-up" src="resources/img/onlineapp-cc.png" width="100%" />
-                            </a>
-                            <p class="centered pull-up">
-                                Website: <a href="http://www.controversia-et-confessio.de">http://www.controversia-et-confessio.de</a>
-                            </p>
-                        </div>
-                        <div class="six columns last">
-                            <h5><strong>Controversia &amp; Confessio Digital</strong></h5>
-                            <ul class="even-left medium">
-                                <li>
-                                    Quellen- und Personendatenbank mit komplexen Beziehungen (Autoren, Gegner, Drucker, etc.)
-                                </li>
-                                <li>
-                                    Umfängliche Suchmöglichkeiten (rollenbasiert, chronologisch, geographisch)
-                                </li>
-                                <li>
-                                    Aufbereitung der Daten für die historische Netzwerkanalyse
-                                </li>
-                                <li>
-                                    Webfrontend vollständig nach Responsive Web / Mobile First ansatz
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="swiper-slide" data-hash="/step-7/substep-5">
-                        <div class="six columns first">
-                            <a href="http://www.gluck-gesamtausgabe.de" title="Digitales Gluck Werkverzeichnis">
-                                <img class="pull-up" src="resources/img/onlineapp-gluck.png" width="100%" />
-                            </a>
-                            <p class="centered pull-up">
-                                Website: <a href="http://www.gluck-gesamtausgabe.de/">http://www.gluck-gesamtausgabe.de</a>
-                            </p>
-                        </div>
-                        <div class="six columns last">
-                            <h5><strong>Digitales Gluck Werkverzeichnis</strong></h5>
-                            <ul class="even-left medium">
-                                <li>
-                                    Bisher 70 ausführliche Werkbeschreibungen, 2000 Quellen aus 432 Archiven, über 1000 nachgewiesene
-                                    Personen (Sänger, Tänzer, Widmungsempfänger), 370 kartierte Spielorte
-                                </li>
-                                <li>
-                                    Komplexe Suchfunktionalitäten für Werke und Quellen, Register für Spielorte, Archivorte und Personen
-                                </li>
-                                <li>
-                                    SVG-basierte Notenanzeige (via Verovio) aus Plaine & Easie Kodierungen
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="swiper-slide" data-hash="/step-7/substep-6">
-                        <div class="six columns first">
-                            <a href="http://www.namenforschung.net" title="Digitales Familiennamenwörterbuch Deutschlands">
-                                <img class="pull-up" src="resources/img/onlineapp-dfd.png" width="100%" />
-                            </a>
-                            <p class="centered pull-up">
-                                Website: <a href="http://www.namenforschung.net/">http://www.namenforschung.net</a>
-                            </p>
-                        </div>
-                        <div class="six columns last">
-                            <h5><strong>Digitales Familiennamenwörterbuch</strong></h5>
-                            <ul class="even-left medium">
-                                <li>
-                                    Digitale Editionsumgebung, basierend auf nativer XML-Datenbank,
-                                    Erfassung der Namenartikel in TEI
-                                </li>
-                                <li>
-                                    Kartenapplikation zur Kartierung der Familiennamen auf Basis
-                                    der Telefonanschlüsse (Stand 2005)
-                                </li>
-                                <li>
-                                    REST-basierte Applikationsarchitektur mit TYPO3 Frontend zur Anzeige
-                                    und Recherche der Namenartikel
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <!-- Add Pagination -->
-                <div class="swiper-pagination"></div>
-                <!-- Add Arrows -->
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
+            <h2 class="down-25">Digital Cultural Heritage</h2>
+            <h4 class="red up-25">TYPO3 in Projekten der Digitalen Akademie</h4>
+            <div id="typo3projects" style="display:none;">
+                <a href="http://www.adwmainz.de">
+                    <img alt="Akademie Mainz"
+                            src="resources/img/screen_adw.png"
+                            data-image="resources/img/screen_adw.png"
+                            data-description=""
+                            style="display:none">
+                </a>
+
+                <a href="https://agate.academy">
+                    <img alt="AGATE"
+                            src="resources/img/screen_agate.png"
+                            data-image="resources/img/screen_agate.png"
+                            data-description=""
+                            style="display:none">
+                </a>
+
+                <a href="https://www.augsburger-baumeisterbuecher.de">
+                    <img alt="Baumeisterbücher"
+                            src="resources/img/screen_bmb.png"
+                            data-image="resources/img/screen_bmb.png"
+                            data-description=""
+                            style="display:none">
+                </a>
+
+                <a href="http://www.controversia-et-confessio.de">
+                    <img alt="Controversia & Confessio"
+                            src="resources/img/screen_cc.png"
+                            data-image="resources/img/screen_cc.png"
+                            data-description=""
+                            style="display:none">
+                </a>
+
+                <a href="http://www.corpusvitrearum.de">
+                    <img alt="Corpus Vitrearum"
+                            src="resources/img/screen_cvma.png"
+                            data-image="resources/img/screen_cvma.png"
+                            data-description=""
+                            style="display:none">
+                </a>
+
+                <a href="http://www.digitale-akademie.de">
+                    <img alt="Digitale Akademie"
+                            src="resources/img/screen_da.png"
+                            data-image="resources/img/screen_da.png"
+                            data-description=""
+                            style="display:none">
+                </a>
+
+                <a href="http://www.namenforschung.net">
+                    <img alt="Digitales Familiennamenwörterbuch"
+                            src="resources/img/screen_dfd.png"
+                            data-image="resources/img/screen_dfd.png"
+                            data-description=""
+                            style="display:none">
+                </a>
+
+                <a href="#">
+                    <img alt="Digitales Flurnamenlexikon"
+                            src="resources/img/screen_dfl.png"
+                            data-image="resources/img/screen_dfl.png"
+                            data-description=""
+                            style="display:none">
+                </a>
+
+                <a href="http://www.inschriften.net">
+                    <img alt="Deutsche Inschriften"
+                            src="resources/img/screen_dio.png"
+                            data-image="resources/img/screen_dio.png"
+                            data-description=""
+                            style="display:none">
+                </a>
+
+                <a href="#">
+                    <img alt="Funde der älteren Bronzezeit"
+                            src="resources/img/screen_funde.png"
+                            data-image="resources/img/screen_funde.png"
+                            data-description=""
+                            style="display:none">
+                </a>
+
+                <a href="http://www.gluck-gesamtausgabe.de/gwv/incipitsuche.html">
+                    <img alt="Gluck Gesamtausgabe"
+                            src="resources/img/screen_gluck.png"
+                            data-image="resources/img/screen_gluck.png"
+                            data-description=""
+                            style="display:none">
+                </a>
+
+                <a href="http://www.spatialhumanities.de">
+                    <img alt="Inschriften im Bezugssystem des Raumes"
+                            src="resources/img/screen_ibr.png"
+                            data-image="resources/img/screen_ibr.png"
+                            data-description=""
+                            style="display:none">
+                </a>
+
+                <a href="#">
+                    <img alt="Plattform Hessische Kulturdenkmäler"
+                            src="resources/img/screen_lfdh.png"
+                            data-image="resources/img/screen_lfdh.png"
+                            data-description=""
+                            style="display:none">
+                </a>
+
+                <a href="http://www.medieval-ashkenaz.org">
+                    <img alt="Medieval Ashkenaz"
+                            src="resources/img/screen_meash.png"
+                            data-image="resources/img/screen_meash.png"
+                            data-description=""
+                            style="display:none">
+                </a>
+
+                <a href="http://www.ingrossaturbuecher.de">
+                    <img alt="Mainzer Ingrossaturbücher"
+                            src="resources/img/screen_mib.png"
+                            data-image="resources/img/screen_mib.png"
+                            data-description=""
+                            style="display:none">
+                </a>
+
+                <a href="http://gutenberg-biographics.ub.uni-mainz.de">
+                    <img alt="Gutenberg Biographics"
+                            src="resources/img/screen_mpk.png"
+                            data-image="resources/img/screen_mpk.png"
+                            data-description=""
+                            style="display:none">
+                </a>
+
+                <a href="#">
+                    <img alt="Prähistorische Bronzefunde"
+                            src="resources/img/screen_pbf.png"
+                            data-image="resources/img/screen_pbf.png"
+                            data-description=""
+                            style="display:none">
+                </a>
+
+                <a href="http://www.personalschriften.de">
+                    <img alt="Personalschriften"
+                            src="resources/img/screen_perso.png"
+                            data-image="resources/img/screen_perso.png"
+                            data-description=""
+                            style="display:none">
+                </a>
+
+                <a href="#">
+                    <img alt="Portal Kleine Fächer"
+                            src="resources/img/screen_pkf.png"
+                            data-image="resources/img/screen_pkf.png"
+                            data-description=""
+                            style="display:none">
+                </a>
+
+                <a href="http://www.reichserzkanzler.de">
+                    <img alt="Reichserzkanzlerarchiv"
+                            src="resources/img/screen_rea.png"
+                            data-image="resources/img/screen_rea.png"
+                            data-description=""
+                            style="display:none">
+                </a>
+
+                <a href="http://www.regesta-imperii.de">
+                    <img alt="Regesta Imperii"
+                            src="resources/img/screen_ri.png"
+                            data-image="resources/img/screen_ri.png"
+                            data-description=""
+                            style="display:none">
+                </a>
+
+                <a href="http://www.rism.info">
+                    <img alt="RISM"
+                            src="resources/img/screen_rism.png"
+                            data-image="resources/img/screen_rism.png"
+                            data-description=""
+                            style="display:none">
+                </a>
+
+                <a href="https://quellen-sozialpolitik-kaiserreich.de/">
+                    <img alt="Quellen Sozialpolitik"
+                            src="resources/img/screen_sozis.png"
+                            data-image="resources/img/screen_sozis.png"
+                            data-description=""
+                            style="display:none">
+                </a>
+
+                <a href="http://sklaven.adwmainz.de/index.php?id=1584">
+                    <img alt="Antike Sklaverei"
+                            src="resources/img/screen_sklaven.png"
+                            data-image="resources/img/screen_sklaven.png"
+                            data-description=""
+                            style="display:none">
+                </a>
+
+                <a href="http://www.shakespearealbum.de/faksimile-ansicht.html">
+                    <img alt="Shakespearealbum"
+                            src="resources/img/screen_shakespeare.png"
+                            data-image="resources/img/screen_shakespeare.png"
+                            data-description=""
+                            style="display:none">
+                </a>
+
             </div>
-            <p class="x-small right">Quelle: <a href="https://digicademy.github.io/2017_typo3_digital_humanities/#/step-11">Torsten Schrade</a></p>
         </div>
 
+        <div class="step">
+            <h2>Zeitliche Horizonte</h2>
+            <h3 class="red up-25">TYPO3 Einsatz</h3>
+            <img src="resources/svg/typo3.svg" width="100%" style="position: relative; left: -3%" />
+        </div>
     </div>
 
     <!-- jquery -->
     <script src="vendor/jquery/jquery-1.11.0.min.js"></script>
+
+    <!-- unite gallery -->
+    <script type="text/javascript" src="vendor/unitegallery/js/unitegallery.min.js"></script>
+    <script type="text/javascript" src="vendor/unitegallery/themes/tiles/ug-theme-tiles.js"></script>
+    <script type="text/javascript" src="resources/js/unite.gallery.js"></script>
 
     <!-- chartist -->
     <script src="vendor/chartist/chartist.min-0.9.7.js"></script>
