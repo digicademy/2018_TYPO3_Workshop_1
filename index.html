@@ -322,7 +322,7 @@
                         <li>Steuerung der Strukturschicht einer Webapp</li>
                         <li>Trennung von Daten und Struktur</li>
                         <li>Minimierung von Redundanz</li>
-                        <li>Templating baut in Typo3
+                        <li>Templating in Typo3
                             <ul>
                                 <li>Template Enginge: Fluid</li>
                                 <li>Konfigurations Engine: TypoScript</li>
@@ -340,24 +340,88 @@
         <div class="step">
             <h2>Templating in Typo3</h2>
             <h3 class="red up-25 after-50">TypoScript</h3>
+            <ul>
+                <li>TypoScript ist eine Konfigurationssprache</li>
+                <li>Websites und Backend lassen sich mit TypoScript umfassen konfigurieren.</li>
+            </ul>
+            <h4>TypoScript = PHP</h4>
+            <ol>
+                <li>
+                        <pre><code class="linenumbers">page = PAGE
+page.10 = TEXT
+page.10.value = Hello World
+page.10.stdWrap.wrap = &lt;h2&gt;|&lt;/h2&gt;
+</code></pre>
+                </li>
+                <li>
+                        <pre><code class="linenumbers php">$data['page'] = 'PAGE';
+$data['page.']['10'] = 'TEXT';
+$data['page.']['10.']['value'] = 'Hello World';
+$data['page.']['10.']['stdWrap.']['wrap'] = '&lt;h2&gt;|&lt;/h2&gt;';
+</code></pre>
+                </li>
+            </ol>
         </div>
 
         <div class="step">
-            <h2>Hands-on: Einbindung der News Extension</h2>
+                <h2>Templating in Typo3</h2>
+                <h3 class="red up-25 after-50">TypoScript: Content Objects</h3>
+                <ul>
+                    <li>Content Objects (cObjects) werden von der Klasse ContentObjectRenderer (typo3/sysext/frontend/Classes/ContentObject/ContentObjectRenderer.php) ausgelesen.</li>
+                    <li>Es gibt verschiedene cObjects mit unterschiedlichen Properties, z.B.:
+                        <dl>
+                            <dt>TEXT</dt>
+                            <dd>Mit dem Inhaltsobjekt "TEXT" kann statischer Text oder HTML ausgegeben werden.</dd>
+                            <dt>CONTENT</dt>
+                            <dd>Mit dem Object "CONTENT" kann Datenbankrecords ausgewählt werden.</dd>
+                            <dt>FLUIDTEMPLATE</dt>
+                            <dd>Mit dem Object "FLUIDTEMPLATE" können Templates in Fluid geparst werden.</dd>
+                        </dl>
+                    </li>
+                    <li><a href="https://docs.typo3.org/typo3cms/TyposcriptReference/ContentObjects/Index.html">TypoScript Reference – Content Objects</a></li>
+                </ul>
+            </div>
+
+            <div class="step">
+                    <h2>Templating in Typo3</h2>
+                    <h3 class="red up-25 after-50">TypoScript: Die Reihenfolge</h3>
+                            <pre><code class="linenumbers">myvar.10 = TEXT
+myvar.10.value= Hallo Welt! // Wird als erstes ausgelesen
+myvar.30 = TEXT
+myvar.30.value= Tschüss Welt! // Wird als letzes ausgelesen
+myvar.20 = TEXT
+myvar.20.value= Hello World! // Wird als zweites ausgelesen
+</code></pre>
+                </div>
+
+        <div class="step">
+                <h2>Hands-on</h2> 
+                <h3 class="red up-25 after-50">HTML Output mit TypoScript</h3>
+                <h4>Template "Main TypoScript Rendering" auf Root-Seite bearbeiten</h4>
+                            <pre><code class="linenumbers">cpage = PAGE
+page.typeNum = 0
+page.10 = TEXT
+page.10.value= Hallo Welt!
+</code></pre>
+        </div>
+
+        <div class="step">
+            <h2>Hands-on</h2>
+            <h3 class="red up-25 after-50">Einbindung der News Extension</h3>
             <ol>
-                <li class="substep">Template "Main TypoScript Rendering" auf Seite "Home" bearbeiten
+                <li>Template "Main TypoScript Rendering" auf Root-Seite bearbeiten
                         <pre><code class="linenumbers">cpage = PAGE
 page.typeNum = 0
 page.10 = CONTENT
 page.10.table = tt_content
 </code></pre>
                 </li>
-                <li class="substep">"Hallo Welt"</li>
-                <li class="substep">News Extension aus dem TER installieren</li>
-                <li class="substep">News Typoscript einbinden</li>
-                <li class="substep">News Datensatz erstellen</li>
-                <li class="substep">News Plugin setzen</li>
-                <li class="substep">Fertig!</li>
+                <li>"Hallo Welt"</li>
+                <li>News Extension aus dem TER installieren</li>
+                <li>News Typoscript einbinden</li>
+                <li>News Datensatz erstellen</li>
+                <li>News Plugin setzen</li>
+                <li>Fertig!</li>
             </ol>
         </div>
 
@@ -582,6 +646,25 @@ page.10.table = tt_content
         </div>
 
         <div class="step">
+            <h2 class="down-50">Die Academy Extension der Digitalen Akademie</h2>
+            <h3 class="red up-25">Generische Modellierung von Forschungsaktivitäten</h3>
+            <div class="mfp-lightbox row">
+                <div class="six columns">
+                    <h4 class="small"><a href="https://github.com/digicademy/academy">Model der Academy Extension</a></p>
+                    <a href="resources/img/academy_relations.png">
+                        <img src="resources/img/academy_relations.png"/>
+                    </a>
+                </div>
+                <div class="six columns">
+                    <h4 class="small"><a href="http://www.adwmainz.de/projekte/projektuebersicht.html">Projektübersicht auf adwmainz.de</a></p>
+                    <a href="resources/img/akademiewebsite.png">
+                        <img src="resources/img/akademiewebsite.png"/>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="step">
                 <h2 class="down-50">AGATE</h2>
                 <h3 class="red up-25">Forschungsinformationssystem für die Akademieforschung</h3>
                 <div class="row">
@@ -642,6 +725,7 @@ page.10.table = tt_content
                                 <img src="resources/img/homepage_pkf.png" alt="" title="" />
                             </a>
                         </div>
+                        <p style="margin-top: -20px;"><a href="https://kleinefaecher.de">https://kleinefaecher.de</a></p>
                         <ul class="small">
                             <li>
                                 Ebenfalls basierend auf der Academy-Extension / CERIF-Modell
@@ -661,7 +745,6 @@ page.10.table = tt_content
                         <a href="resources/img/pkf_modell.png">
                             <img src="resources/img/pkf_modell.png" alt="" title="" />
                         </a>
-                        <p style="margin-top: -20px;"><a href="https://kleinefaecher.de">https://kleinefaecher.de</a></p>
                         <p class="x-small">
                             Datenmodell
                         </p>
@@ -688,6 +771,70 @@ page.10.table = tt_content
                 <h2 class="line-height-one-five">
                     Extbase & Fluid – Ein Überblick
                 </h2>
+            </div>
+
+            <div class="step">
+                <h2>Links & Literaturhinweise</h2>
+                <h4>Typo3 Documentation</h4>
+                <ul class="small pull-up">
+                    <li><a href="https://docs.typo3.org/typo3cms/GettingStartedTutorial/">Getting Started Tutorial</a></li>
+                    <li><a href="https://docs.typo3.org/typo3cms/TyposcriptIn45MinutesTutorial/latest/">TypoScript in 45 Minutes</a></li>
+                    <li><a href="https://docs.typo3.org/typo3cms/TyposcriptReference/">TypoScript Reference</a></li>
+                    <li><a href="https://docs.typo3.org/typo3cms/TemplatingTutorial/Index.html">Templating with FLUIDTEMPLATE</a></li>
+                    <li><a href="https://docs.typo3.org/typo3cms/extensions/fluid_styled_content/">Content Elements based on Fluid</a></li>
+                    <li><a href="https://docs.typo3.org/typo3cms/ExtbaseFluidBook/Index.html">Developing TYPO3 Extensions with Extbase and Fluid</a></li>
+                    <li><a href="https://docs.typo3.org/typo3cms/ExtbaseGuide/Index.html">A TYPO3 Extbase and Fluid Guide</a></li>
+                </ul>
+                <h4>Weitere Tutorials</h4>
+                <ul class="small pull-up">
+                    <li>Lobacher, Patrick: TYPO3 Extbase: Moderne Extensionentwicklung für TYPO3 CMS mit Extbase & Fluid, 2. Aufl., o.O. 2016.</li>
+                    <li>Rau, Jochen/Kurfürst, Sebastian: Zukunftssichere TYPO3-Extensions mit Extbase und Fluid, Sebastopol (USA) 2010.</li>
+                    <li><a href="https://jweiland.net/video-anleitungen/typo3.html">jweiland Video Anleitungen</a></li>
+                    <li><a href="https://typo3buddy.com/typo3-template-tutorial/fluid/">TYPO3 Fluid template tutorial</a></li>
+                </ul>
+            </div>
+
+            <div class="step">
+                <div class="centered">
+                    <h1 class="red">F I N I S</h1>
+                </div>
+            </div>
+    
+            <div class="step">
+                <h2>Software &amp; Nachnutzung</h2>
+    
+                <h4>Benutze Software</h4>
+    
+                <ul class="small pull-up">
+                    <li>
+                        <a href="https://github.com/impress/impress.js">Impress.js</a> (Presentation)
+                    </li>
+                    <li>
+                        <a href="https://www.google.com/fonts#UsePlace:use/Collection:Open+Sans">Open Sans</a> (Google Font)
+                    </li>
+                    <li>
+                        <a href="https://github.com/dimsemenov/Magnific-Popup">Magnific Popup</a> (Lightbox)
+                    </li>
+                    <li>
+                        <a href="http://idangero.us/swiper/">Swiper</a> (Responsiver Slider)
+                    </li>
+                    <li>
+                        <a href="http://unitegallery.net/">Unite Gallery</a> (Bildergallerie)
+                    </li>
+                </ul>
+    
+                <h4>Lizenzhinweis</h4>
+                <ul class="small pull-up">
+                    <li>
+                        Link:
+                        <a href="https://digicademy.github.io/2018_t3ud/">
+                            https://digicademy.github.io/2018_t3ud/
+                        </a>
+                    </li>
+                    <li>
+                        Lizenz: <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a>, Torsten Schrade
+                    </li>
+                </ul>
             </div>
     </div>
 
