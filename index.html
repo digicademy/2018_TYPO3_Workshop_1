@@ -774,6 +774,97 @@ page.10.table = tt_content
             </div>
 
             <div class="step">
+                <h2 class="down-50">Extbase & Fluid</h2>
+                <h3 class="red up-25">Grundsätzliches</h3>
+                <dl>
+                    <dt>Extbase</dt>
+                    <dl>Extbase ist ein PHP-Framework zur Entwicklung von TYPO3-Extensions. Grundlegendes Prinzip von Extbase ist die Separation of concerns (SoC) und eine modulare Architektur.</dl>
+                    <dt>Fluid</dt>
+                    <dl>Fluid ist die Core Template Enginge von TYPO3. Mit Fluid lassen sich Frontends für TYPO3 Extensions herstellen und Objekte auslesen, die von Extbase an den View übergeben werden.</dl>
+                </dl>                    
+            </div>
+
+            <div class="step">
+                <h2 class="down-50">Extbase</h2>
+                <h3 class="red up-25">Programmierprinzipien</h3>
+                <dl class="small">
+                    <dt>Object oriented PHP</dt>
+                    <dd>TYPO3 ist eine PHP Applikation. Extbase setzt auf das Programmierparadigma der Objektorientierung und nutzt dafür die Sprache PHP.<br><span class="x-small">Literaturhinweis: <a href="https://phptherightway.com/">PHP The Right Way</a></span></dd>
+                    <dt>Domain-Driven Design</dt>
+                    <dd>Domain-Driven Design ist ein Modellierungs Paradigma. DDD konzentriert sich auf das zu lösende "Problem", die Anwendungsdomäne. Ziel ist es ein abstraktes Domainmodel in einer allgemeinen Sprache zu entwickeln.<br><span class="x-small">Literaturhinweis: Evans, Eric J.: Domain-Driven Design: Tackling Complexity in the Heart of Software, Boston 2014.</span></dd>
+                    <dt>Model-View-Controller</dt>
+                    <dd>Model-View-Controller ist ein Architektur Paradigma. MVC unterteile eine Applikation grob in drei Bereiche: Die Geschäftslogik (Domain), den Output (View) und die Steuerung der Funktionalität (Controller).<br><span class="x-small">Literaturhinweis: Lobacher, Patrick: TYPO3 Extbase: Moderne Extensionentwicklung für TYPO3 CMS mit Extbase & Fluid, 2. Aufl., o.O. 2016.</span></dd>
+                </dl>                    
+            </div>
+
+            <div class="step">
+                <h2 class="down-50">Extbase</h2>
+                <h3 class="red up-25">MVC</h3>
+                <div class="row">
+                    <div class="six columns">
+                        <div class="mfp-lightbox">
+                        <a href="resources/img/MVC.png">
+                            <img src="resources/img/MVC.png" />
+                        </a>
+                        </div>
+                    </div>
+                    <div class="six columns">
+                        <h4>Beispielrequest in Extbase</h4>
+                        <ol class="small">
+                            <li>Ein User schickt einen Request an die Extbase-Applikation.</li>
+                            <li>Der Controller empfängt den Request und triggert die entsprechende Action.</li>
+                            <li>Die Action des Controllers fragt das entsprechende Repository nach Objekten.</li>
+                            <li>Im Repository wird ein Mapping der Rohdaten auf das Model ausgeführt.</li>
+                            <li>Das Result-Objekt wird an die Controller-Action zurückübergeben.</li>
+                            <li>Die Action übergibt die Daten an den View.</li>
+                        </ol>
+                    </div>
+                </div>                   
+            </div>
+
+            <div class="step">
+                <h2 class="down-50">Extbase</h2>
+                <h3 class="red up-25">Das Beispiel Academy-Extension</h3>
+                <div class="row">
+                    <div class="four columns">
+                        <h4>Persons Controller</h4>
+                        <div class="mfp-lightbox">
+                            <a href="resources/img/AcademyPersonsController.png">
+                                <img src="resources/img/AcademyPersonsController.png" />
+                            </a>
+                        </div>
+                    </div>
+                    <div class="four columns">
+                        <h4>Persons Class</h4>
+                        <div class="mfp-lightbox">
+                            <a href="resources/img/AcademyPersonsClass.png">
+                                <img src="resources/img/AcademyPersonsClass.png" />
+                            </a>
+                        </div>
+                    </div>
+                    <div class="four columns">
+                        <h4>Persons Repository</h4>
+                        <div class="mfp-lightbox">
+                            <a href="resources/img/AcademyPersonsRepository.png">
+                                <img src="resources/img/AcademyPersonsRepository.png" />
+                            </a>
+                        </div>
+                    </div>
+                </div>                   
+            </div>
+
+            <div class="step">
+                <h2 class="down-50">Fluid</h2>
+                <h3 class="red up-25">Grundsätzliches</h3>
+                <dl>
+                    <dt>Object Accessors</dt>
+                    <dd>Mit Object Accessors werden Argumente, die vom Controller an den View übergeben werden, ausgelesen. Die Notation entspricht dem in geschweiften Klammern geschriebenen key aus dem Controller. <pre>Bespiel: persons = {persons}</pre></dd>
+                    <dt>ViewHelper</dt>
+                    <dd>ViewHelper sind PHP-Skripte, die sich in Fluid über spezielle Tags aufrufen lassen. Mit ihnen können komplexere Operationen ausgeführt werden, wie z.B. if-Abfragen oder Loops. Neben den Fluid-Core-ViewHelpern, können auch eigene ViewHelper eingesetzt werden.</dd>
+                </dl>
+            </div>
+
+            <div class="step">
                 <h2>Links & Literaturhinweise</h2>
                 <h4>TYPO3 Documentation</h4>
                 <ul class="small pull-up">
@@ -785,12 +876,14 @@ page.10.table = tt_content
                     <li><a href="https://docs.typo3.org/typo3cms/ExtbaseFluidBook/Index.html">Developing TYPO3 Extensions with Extbase and Fluid</a></li>
                     <li><a href="https://docs.typo3.org/typo3cms/ExtbaseGuide/Index.html">A TYPO3 Extbase and Fluid Guide</a></li>
                 </ul>
-                <h4>Weitere Tutorials</h4>
+                <h4>Weitere Literatur und Tutorials</h4>
                 <ul class="small pull-up">
                     <li>Lobacher, Patrick: TYPO3 Extbase: Moderne Extensionentwicklung für TYPO3 CMS mit Extbase & Fluid, 2. Aufl., o.O. 2016.</li>
                     <li>Rau, Jochen/Kurfürst, Sebastian: Zukunftssichere TYPO3-Extensions mit Extbase und Fluid, Sebastopol (USA) 2010.</li>
                     <li><a href="https://jweiland.net/video-anleitungen/typo3.html">jweiland Video Anleitungen</a></li>
                     <li><a href="https://typo3buddy.com/typo3-template-tutorial/fluid/">TYPO3 Fluid template tutorial</a></li>
+                    <li><a href="https://phptherightway.com/">PHP The Right Way</a></li>
+                    <li>Evans, Eric J.: Domain-Driven Design: Tackling Complexity in the Heart of Software, Boston 2014.</li>
                 </ul>
             </div>
 
